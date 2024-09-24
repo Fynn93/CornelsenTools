@@ -6,14 +6,14 @@ class Program
 {
     private static async Task Main(string[] args)
     {
-        var rootCommand = new RootCommand("A tool to decrypt Cornelsen files.");
+        var rootCommand = new RootCommand("A tool to help with Cornelsen files.");
 
         var fileOption = new Argument<FileInfo?>(
             name: "file",
-            description: "The file to read and decrypt.");
+            description: "The file to read.");
         var outputOption = new Argument<FileInfo?>(
             name: "output",
-            description: "The file to write the decrypted content to.",
+            description: "The file to write to.",
             getDefaultValue: () => null);
 
         var decryptCommand = new Command("decrypt", "Decrypt a file.")
