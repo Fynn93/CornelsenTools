@@ -1,0 +1,39 @@
+name: Build CornelsenTools
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build
+    - name: Upload debug build
+      uses: actions/upload-artifact@v3.2.1-node20
+      with:
+        name: CornelsenTools-Debug
+        path: bin/Debug/net8.0
+    - name: Upload release build
+      uses: actions/upload-artifact@v3.2.1-node20
+      with:
+        name: CornelsenTools-Release
+        path: bin/Release/net8.0
+    - name: Publish
+      run: dotnet publish
+    - name: Upload publish
+      uses: actions/upload-artifact@v3.2.1-node20
+      with:
+        name: CornelsenTools-Publish
+        path: bin/Release/net8.0/win-x64/publish
