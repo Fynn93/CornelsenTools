@@ -12,10 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
     - name: Build
       run: dotnet build
     - name: Upload debug build
@@ -23,6 +19,8 @@ jobs:
       with:
         name: CornelsenTools-Debug
         path: CornelsenTools/bin/Debug/net8.0
+    - name: Build release
+      run: dotnet build --configuration Release
     - name: Upload release build
       uses: actions/upload-artifact@v3.2.1-node20
       with:
