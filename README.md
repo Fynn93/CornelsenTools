@@ -1,10 +1,10 @@
 # Cornelsen Tools
 > [!NOTE]
-> This is a WIP!
+> This is a WIP!  
 > More content will come soon™!
 
 ## How to install
-Grab the file named "CornelsenTools-Publish.zip" from the lastest release [here](https://github.com/Fynn93/CornelsenTools/releases/latest)
+Grab the file named "CornelsenTools-Publish.zip" from the lastest release [here](https://github.com/Fynn93/CornelsenTools/releases/latest)  
 Unzip it and you can now use CornelsenTools!
 
 ## Usage
