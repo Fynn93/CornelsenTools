@@ -3,6 +3,9 @@
 > This is a WIP!  
 > More content will come soon™!
 
+This is a tool to help you with Cornelsen e-books  
+It can currently decrypt and encrypt files
+
 ## How to install
 Grab the file named "CornelsenTools-Publish.zip" from the lastest release [here](https://github.com/Fynn93/CornelsenTools/releases/latest)  
 Unzip it and you can now use CornelsenTools!
