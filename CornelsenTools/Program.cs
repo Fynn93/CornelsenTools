@@ -8,12 +8,13 @@ class Program
     {
         var rootCommand = new RootCommand("A tool to decrypt Cornelsen files.");
 
-        var fileOption = new Option<FileInfo?>(
-            name: "--file",
+        var fileOption = new Argument<FileInfo?>(
+            name: "file",
             description: "The file to read and decrypt.");
-        var outputOption = new Option<FileInfo?>(
-            name: "--output",
-            description: "The file to write the decrypted content to.");
+        var outputOption = new Argument<FileInfo?>(
+            name: "output",
+            description: "The file to write the decrypted content to.",
+            getDefaultValue: () => null);
 
         var decryptCommand = new Command("decrypt", "Decrypt a file.")
         {
@@ -53,7 +54,7 @@ class Program
             return;
         }
 
-        output ??= new FileInfo(file!.FullName + ".encrypted");
+        output ??= new FileInfo(file!.FullName + (encrypt ? ".encrypted": ".decrypted"));
 
         var toEncrypt = File.ReadAllBytes(file!.FullName);
         var encrypted = encrypt ? EncryptionTools.Encrypt(toEncrypt) : EncryptionTools.Decrypt(toEncrypt);
