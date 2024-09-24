@@ -27,7 +27,7 @@ jobs:
         name: CornelsenTools-Release
         path: CornelsenTools/bin/Release/net8.0
     - name: Publish
-      run: dotnet publish
+      run: dotnet publish --no-self-contained /p:DebugType=None /p:DebugSymbols=false
     - name: Upload publish
       uses: actions/upload-artifact@v3.2.1-node20
       with:
