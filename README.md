@@ -3,7 +3,7 @@
 > This is a WIP!  
 > More content will come soon™!
 
-This is a tool to help you with Cornelsen e-books  
+This is a tool to help you with Cornelsen Unterrichtsmanager e-books  
 It can currently decrypt and encrypt files
 
 ## How to install
